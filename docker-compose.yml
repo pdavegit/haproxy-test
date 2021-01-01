@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+   client:
+     build: client
+     depends_on:
+        - haproxy
+
+   haproxy:
+     build: haproxy
+     depends_on:
+        - server
+
+   server:
+     build: server
